@@ -38,9 +38,12 @@ app.use((req, res, next) => {
   next()
 })
 
+// Logging
+app.use((req, res, next) => { console.log(req.method + ': ' + req.path); next() })
+
 // Routes-------------------------------------------------------------------------------------------------------
-app.use('/user', user.create())
-app.use('/organizations', organizations.create())
+app.use('/github/user', user.create())
+app.use('/github/organizations', organizations.create())
 
 // Respond to client
 app.use(response())
