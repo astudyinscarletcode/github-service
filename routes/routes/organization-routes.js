@@ -32,7 +32,7 @@ function createRepoRoutes () {
 }
 
 function createHooksRoutes () {
-  router.route('/hooks/:id')
+  router.route('/:org/hooks')
   .put(handler.setWebhook())
 }
 
